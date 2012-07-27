@@ -5,15 +5,15 @@
 
 Summary:	Keyring and password manager for the MATE desktop
 Name:		mate-keyring
-Version:	1.2.0
+Version:	1.4.0
 Release:	1
 License:	GPLv2+ and LGPLv2+
 Group:		Networking/Remote access
 URL:		http://mate-desktop.org
-Source0:	http://pub.mate-desktop.org/releases/1.2/%{name}-%{version}.tar.xz
+Source0:	http://pub.mate-desktop.org/releases/1.4/%{name}-%{version}.tar.xz
 
-BuildRequires:	intltool
 BuildRequires:	gtk-doc
+BuildRequires:	intltool
 BuildRequires:	mate-common
 BuildRequires:	libtasn1-tools
 BuildRequires:	libgcrypt-devel
