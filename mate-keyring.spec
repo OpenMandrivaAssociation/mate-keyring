@@ -1,6 +1,6 @@
 %define	major	0
 %define libgcr	%mklibname mategcr %{major}
-%define libgp11	%mklibname mategp11_ %{major}
+%define libgck	%mklibname mategck %{major}
 %define devname	%mklibname mate-keyring -d
 
 Summary:	Keyring and password manager for the MATE desktop
@@ -42,18 +42,18 @@ Group:		System/Libraries
 %description -n %{libgcr}
 This package contains a shared library for %{name}.
 
-%package -n %{libgp11}
+%package -n %{libgck}
 Summary:	Shared library for %{name}
 Group:		System/Libraries
 
-%description -n %{libgp11}
+%description -n %{libgck}
 This package contains a shared library for %{name}.
 
 %package -n %{devname}
 Group: Development/C
 Summary: Development files for %{name}
 Requires: %{libgcr} = %{version}-%{release}
-Requires: %{libgp11} = %{version}-%{release}
+Requires: %{libgck} = %{version}-%{release}
 Provides: %{name}-devel = %{version}-%{release}
 
 %description -n %{devname}
@@ -89,6 +89,7 @@ NOCONFIGURE=yes ./autogen.sh
 /%{_lib}/security/pam_mate*.so
 %{_libdir}/%{name}
 %{_libdir}/mate-keyring-prompt
+%{_libdir}/pkcs11
 %{_datadir}/MateConf/gsettings/org.mate.crypto.cache.convert
 %{_datadir}/MateConf/gsettings/org.mate.crypto.pgp.convert
 %{_datadir}/dbus-1/services/org.mate-freedesktop.secrets.service
@@ -100,18 +101,18 @@ NOCONFIGURE=yes ./autogen.sh
 %files -n %{libgcr}
 %{_libdir}/libmategcr.so.%{major}*
 
-%files -n %{libgp11}
-%{_libdir}/libmategp11.so.%{major}*
+%files -n %{libgck}
+%{_libdir}/libmategck.so.%{major}*
 
 %files -n %{devname}
 %{_libdir}/libmategcr.so
-%{_libdir}/libmategp11.so
+%{_libdir}/libmategck.so
 %{_libdir}/pkgconfig/mate-gcr-0.pc
-%{_libdir}/pkgconfig/mate-gp11-0.pc
-%dir %{_includedir}/gp11
-%{_includedir}/gp11/*
-%dir %{_includedir}/mate-gp11
-%{_includedir}/mate-gp11/*
+%{_libdir}/pkgconfig/mate-gck-0.pc
+%dir %{_includedir}/gck
+%{_includedir}/gck/*
+%dir %{_includedir}/mate-gck
+%{_includedir}/mate-gck/*
 %dir %{_includedir}/mategcr
 %dir %{_includedir}/mategcr/gcr
 %{_includedir}/mategcr/gcr/*
