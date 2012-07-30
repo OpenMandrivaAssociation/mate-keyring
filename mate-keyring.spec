@@ -93,15 +93,9 @@ NOCONFIGURE=yes ./autogen.sh
 %{_datadir}/MateConf/gsettings/org.mate.crypto.pgp.convert
 %{_datadir}/dbus-1/services/org.mate-freedesktop.secrets.service
 %{_datadir}/dbus-1/services/org.mate.keyring.service
-%dir %{_datadir}/mate-keyring/ui
-%{_datadir}/mate-keyring/ui/*
 %{_datadir}/glib-2.0/schemas/*.gschema.xml
-%dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/introspect
-%{_datadir}/%{name}/introspect/*
-%dir %{_datadir}/mategcr
-%dir %{_datadir}/mategcr/ui
-%{_datadir}/mategcr/ui/*
+%{_datadir}/mate-keyring
+%{_datadir}/mategcr
 
 %files -n %{libgcr}
 %{_libdir}/libmategcr.so.%{major}*
