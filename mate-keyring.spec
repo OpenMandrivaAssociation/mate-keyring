@@ -118,3 +118,17 @@ NOCONFIGURE=yes ./autogen.sh
 %{_includedir}/mategcr/gcr/*
 %doc %{_datadir}/gtk-doc/*
 
+
+
+%changelog
+* Mon Jul 30 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 1.4.0-1
++ Revision: 811416
+- fix files list
+
+  + Matthew Dawkins <mattydaw@mandriva.org>
+    - new version 1.4.0
+
+* Thu May 31 2012 Matthew Dawkins <mattydaw@mandriva.org> 1.2.0-1
++ Revision: 801631
+- imported package mate-keyring
+
